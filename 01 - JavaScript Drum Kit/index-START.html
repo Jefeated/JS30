@@ -58,9 +58,25 @@
   <audio data-key="76" src="sounds/tink.wav"></audio>
 
 <script>
+  // TODO: add event for keydown
+  //       bind key to sound
+  //       add transition to keydown
+  //       remove transition from keydown
+
+window.addEventListener("keydown", keySound);
+
+function keySound (event) {
+  var audio = document.querySelector("audio[src='sounds/clap.wav']");
+  var keys = document.getElementsByClassName('key')
+  if (event.keyCode == 65){
+    audio.play();
+    console.log(keys[0]);
+    keys[0].classList.add('playing');
+  };
+};
+
 
 </script>
-
 
 </body>
 </html>
